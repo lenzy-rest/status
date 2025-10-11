@@ -1,1 +1,519 @@
-Hello
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="Ethone Is An High Quality C2 With High Power" name="description">
+  <meta content="free stresser, Ethone C2, top stresser, stressthem, stress them, stress denial of service, dos, stresser app,booter,ip stresser, stresser, booter, ddos tool, ddos attack, ddos attack online, layer7 ddos, layer4 ddos, api, api access, network stresser, network booter, slowloris, best Booter, best stresser, strongest stresser, powerful booter, ddoser, ddos, gbooter, top booter, ipstress, booter, stresser, network stresser, network booter, #Booter, BROWSER, captcha bypass, drdos,ssyn, dns amplification" name="keywords">
+  <meta content="https://ethone.top" name="application-url">
+  <meta content="ethone top" name="application-name">
+  <meta content="index, follow" name="robots">
+
+  <meta property="og:title" content="Ethone" />
+  <meta property="og:description" content="Professional DDoS testing platform with advanced bypass methods" />
+  <meta property="og:url" content="https://ethone.top" />
+  <meta property="og:image" content="https://media.discordapp.net/attachments/1352802241370656902/1360000171001516042/Ethrone_server_icon.png" />
+  <meta property="og:image:width" content="256" />
+  <meta property="og:image:height" content="256" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ethone" />
+  <meta name="theme-color" content="#8A2BE2">
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <title>Ethone Status</title>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0a0e1a;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #e2e8f0;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(139, 92, 246, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .glow-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.3;
+      z-index: 0;
+      pointer-events: none;
+      animation: float-glow 20s ease-in-out infinite;
+    }
+
+    .glow-1 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.5) 0%, transparent 70%);
+      top: 10%;
+      left: 20%;
+    }
+
+    .glow-2 {
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.4) 0%, transparent 70%);
+      top: 50%;
+      right: 10%;
+      animation-delay: -7s;
+    }
+
+    @keyframes float-glow {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(50px, -50px) scale(1.1); }
+      66% { transform: translate(-30px, 30px) scale(0.9); }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .logo {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      box-shadow: 0 8px 32px rgba(139, 92, 246, 0.4);
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      font-weight: 900;
+      background: linear-gradient(180deg, #ffffff 0%, #a78bfa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .status-banner {
+      background: rgba(17, 20, 41, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      border-radius: 15px;
+      padding: 25px 30px;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .status-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .status-icon.operational {
+      background: #4ade80;
+      box-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
+      animation: pulse-green 2s ease-in-out infinite;
+    }
+
+    .status-icon.down {
+      background: #f87171;
+      box-shadow: 0 0 20px rgba(248, 113, 113, 0.5);
+    }
+
+    @keyframes pulse-green {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+
+    .status-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    .status-description {
+      color: #94a3b8;
+      margin-top: 5px;
+      font-size: 0.95rem;
+    }
+
+    /* Service Groups */
+    .service-group {
+      margin-bottom: 50px;
+    }
+
+    .group-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: #f1f5f9;
+    }
+
+    .service-card {
+      background: rgba(17, 20, 41, 0.4);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover {
+      border-color: rgba(139, 92, 246, 0.4);
+      box-shadow: 0 8px 32px rgba(139, 92, 246, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .service-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .service-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .service-status-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .service-status-dot.up {
+      background: #4ade80;
+      box-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+    }
+
+    .service-status-dot.down {
+      background: #f87171;
+      box-shadow: 0 0 10px rgba(248, 113, 113, 0.5);
+    }
+
+    .service-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #f1f5f9;
+    }
+
+    .service-url {
+      color: #8b5cf6;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      font-size: 0.95rem;
+    }
+
+    .service-url:hover {
+      color: #a78bfa;
+      text-decoration: underline;
+    }
+
+    .uptime-badge {
+      background: linear-gradient(135deg, rgba(74, 222, 128, 0.2) 0%, rgba(74, 222, 128, 0.1) 100%);
+      border: 1px solid rgba(74, 222, 128, 0.3);
+      color: #4ade80;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .uptime-badge.down {
+      background: linear-gradient(135deg, rgba(248, 113, 113, 0.2) 0%, rgba(248, 113, 113, 0.1) 100%);
+      border: 1px solid rgba(248, 113, 113, 0.3);
+      color: #f87171;
+    }
+
+    .cert-info {
+      background: rgba(139, 92, 246, 0.1);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      color: #a78bfa;
+      padding: 4px 10px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .uptime-graph {
+      display: flex;
+      gap: 3px;
+      align-items: flex-end;
+      height: 40px;
+      margin-bottom: 8px;
+    }
+
+    .uptime-bar {
+      flex: 1;
+      background: #4ade80;
+      border-radius: 3px;
+      min-width: 2px;
+      transition: all 0.2s ease;
+      box-shadow: 0 0 5px rgba(74, 222, 128, 0.3);
+    }
+
+    .uptime-bar.down {
+      background: #f87171;
+      box-shadow: 0 0 5px rgba(248, 113, 113, 0.3);
+    }
+
+    .uptime-bar:hover {
+      transform: scaleY(1.1);
+      opacity: 0.8;
+    }
+
+    .uptime-timeline {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: #64748b;
+      margin-top: 5px;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #64748b;
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(139, 92, 246, 0.1);
+      margin-top: 60px;
+    }
+
+    .footer a {
+      color: #8b5cf6;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .footer a:hover {
+      color: #a78bfa;
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 1.5rem;
+      }
+      
+      .status-text {
+        font-size: 1.2rem;
+      }
+      
+      .service-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .uptime-graph {
+        height: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow-orb glow-1"></div>
+  <div class="glow-orb glow-2"></div>
+
+  <div class="container">
+    <div class="header">
+      <h1>Ethone Status</h1>
+    </div>
+
+    <div class="status-banner">
+      <div class="status-icon operational" id="overallStatusIcon"></div>
+      <div>
+        <div class="status-text" id="overallStatusText">Network Online</div>
+        <div class="status-description">All services are running smoothly</div>
+      </div>
+    </div>
+
+    <div class="service-group">
+      <h2 class="group-title">Main Services</h2>
+      
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-info">
+            <div class="service-status-dot up" id="service1Status"></div>
+            <div>
+              <div class="service-name">Ethone CNC</div>
+              <a href="https://ethone.net" target="_blank" class="service-url">ethone.net</a>
+            </div>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <span class="cert-info">24H</span>
+            <span class="uptime-badge up" id="service1Uptime">100%</span>
+          </div>
+        </div>
+        <div class="uptime-graph" id="graph-main"></div>
+        <div class="uptime-timeline">
+          <span>24h ago</span>
+          <span>now</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-info">
+            <div class="service-status-dot up" id="service2Status"></div>
+            <div>
+              <div class="service-name">Ethone API</div>
+              <a href="https://api.ethone.net" target="_blank" class="service-url">api.ethone.net</a>
+            </div>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <span class="cert-info">24H</span>
+            <span class="uptime-badge up" id="service2Uptime">100%</span>
+          </div>
+        </div>
+        <div class="uptime-graph" id="graph-status"></div>
+        <div class="uptime-timeline">
+          <span>24h ago</span>
+          <span>now</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+     <a href="https://ethone.net">Home</a> · Powered by Ethone Network ·  <a href="https://discord.gg/ethone">Discord</a>
+    </div>
+  </div>
+
+  <script>
+    const currentStatus = "DOWN";
+    
+    function setStatus(status) {
+      const statusValue = status.toUpperCase();
+      
+      const overallStatusIcon = document.getElementById('overallStatusIcon');
+      const overallStatusText = document.getElementById('overallStatusText');
+      const overallStatusDescription = document.querySelector('.status-description');
+      
+      if (statusValue === 'UP') {
+        overallStatusIcon.className = 'status-icon operational';
+        overallStatusText.textContent = 'All Systems Operational';
+        overallStatusDescription.textContent = 'All services are running smoothly';
+        
+        document.getElementById('service1Status').className = 'service-status-dot up';
+        document.getElementById('service2Status').className = 'service-status-dot up';
+        
+        document.getElementById('service1Uptime').className = 'uptime-badge up';
+        document.getElementById('service1Uptime').textContent = '100%';
+        document.getElementById('service2Uptime').className = 'uptime-badge up';
+        document.getElementById('service2Uptime').textContent = '100%';
+        
+        updateGraphs('up');
+        
+      } else if (statusValue === 'DOWN') {
+        overallStatusIcon.className = 'status-icon down';
+        overallStatusText.textContent = 'All services are currently experiencing issues';
+        overallStatusDescription.textContent = 'All services are currently experiencing issues';
+        
+        document.getElementById('service1Status').className = 'service-status-dot down';
+        document.getElementById('service2Status').className = 'service-status-dot down';
+        
+        document.getElementById('service1Uptime').className = 'uptime-badge down';
+        document.getElementById('service1Uptime').textContent = '0%';
+        document.getElementById('service2Uptime').className = 'uptime-badge down';
+        document.getElementById('service2Uptime').textContent = '0%';
+        
+        updateGraphs('down');
+      }
+    }
+    
+    function updateGraphs(status) {
+      const graphs = ['graph-main', 'graph-status'];
+      
+      graphs.forEach(graphId => {
+        const graph = document.getElementById(graphId);
+        graph.innerHTML = '';
+        
+        const bars = 48;
+        
+        for (let i = 0; i < bars; i++) {
+          const bar = document.createElement('div');
+          bar.className = 'uptime-bar';
+          
+          if (status === 'down') {
+            bar.classList.add('down');
+          }
+          
+          const height = Math.random() * 20 + 20;
+          bar.style.height = height + 'px';
+          
+          graph.appendChild(bar);
+        }
+      });
+    }
+    
+    function generateUptimeGraph(elementId, uptimePercent = 100) {
+      const graph = document.getElementById(elementId);
+      if (!graph) return;
+      
+      const bars = 48;
+      
+      for (let i = 0; i < bars; i++) {
+        const bar = document.createElement('div');
+        bar.className = 'uptime-bar';
+        
+        const random = Math.random() * 100;
+        if (random > uptimePercent) {
+          bar.classList.add('down');
+        }
+        
+        const height = Math.random() * 20 + 20;
+        bar.style.height = height + 'px';
+        
+        graph.appendChild(bar);
+      }
+    }
+
+    setStatus(currentStatus);
+
+    setTimeout(() => {
+      location.reload();
+    }, 300000);
+  </script>
+</body>
+</html>
